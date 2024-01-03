@@ -2,8 +2,13 @@
 export default {
   content: ["./app/**/*.{js,jsx,ts,tsx}"],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        lobster: ["Lobster", "serif"],
+        roboto: ["Roboto", "sans-serif"],
+        plex: ["IBM Plex Sans", "sans-serif"],
+      },
+    },
   },
   plugins: [],
-}
-
+};
