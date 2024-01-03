@@ -11,9 +11,5 @@ export const loader: LoaderFunction = async ({ request }) => {
 };
 
 export default function Dashboard() {
-  return (
-    <form method="post" action="/logout">
-      <button type="submit">Logout</button>
-    </form>
-  );
+  return <div className="container mx-auto">Dashboard</div>;
 }

@@ -5,7 +5,7 @@ import { commitSession, getSession } from "~/session";
 import { useActionData, useNavigate } from "@remix-run/react";
 import { Error, zodErrorToError } from "~/error";
 import { RegistrationForm } from "~/zod";
-import { Card } from "~/components/Card";
+import { Card } from "~/components";
 
 export default function Register() {
   const actionData = useActionData<Error>();

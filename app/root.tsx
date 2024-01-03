@@ -7,8 +7,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
+  useLocation,
 } from "@remix-run/react";
 import tailwindStylesheet from "./tailwind.css";
+import { Navbar } from "./components";
 
 export const links: LinksFunction = () => [
   ...(cssBundleHref ? [{ rel: "stylesheet", href: cssBundleHref }] : []),
@@ -16,6 +18,18 @@ export const links: LinksFunction = () => [
 ];
 
 export default function App() {
+  const location = useLocation();
+
+  const markup =
+    location.pathname === "/login" ? (
+      <Outlet />
+    ) : (
+      <>
+        <Navbar />
+        <Outlet />
+      </>
+    );
+
   return (
     <html lang="en">
       <head>
@@ -25,7 +39,7 @@ export default function App() {
         <Links />
       </head>
       <body className="bg-slate-800 text-white">
-        <Outlet />
+        {markup}
         <ScrollRestoration />
         <Scripts />
         <LiveReload />

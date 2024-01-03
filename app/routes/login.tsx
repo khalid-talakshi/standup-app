@@ -9,7 +9,7 @@ import bcrypt from "bcryptjs";
 import { commitSession, getSession } from "~/session";
 import { useActionData, useNavigate } from "@remix-run/react";
 import { constructError, Error, zodErrorToError } from "~/error";
-import { Card } from "~/components/Card";
+import { Card } from "~/components";
 import { LoginForm } from "~/zod";
 
 export const loader: LoaderFunction = async () => {
